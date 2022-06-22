@@ -4,13 +4,13 @@ import { useNavigate } from 'react-router-dom'
 
 
 const AddTask = ({ onAdd }) => {
-  const [text, setText] = useState('')
+  const [name, setText] = useState('')
   const [day, setDay] = useState('')
   const [reminder, setReminder] = useState(false)
   
   const nav = useNavigate()
 
-  const redirect = (e) => {
+  const redirect = () => {
     nav('/tasks/list')
   }
 
@@ -18,8 +18,8 @@ const AddTask = ({ onAdd }) => {
     e.preventDefault()
 
     //validate input
-    if(!text) return alert('Please enter a text')
-    onAdd({ text, day, reminder  })
+    if(!name) return alert('Please enter a text')
+    onAdd({ name, day, reminder  })
     setText('')
     setDay('')
     setReminder(false)
@@ -31,7 +31,7 @@ const AddTask = ({ onAdd }) => {
       <form onSubmit={onSubmit}>
         <div className="form-control">
           <label>Task</label>
-          <input type="text" placeholder="Task title" value={text} onChange={(e) => setText(e.target.value)}/>
+          <input type="text" placeholder="Task title" value={name} onChange={(e) => setText(e.target.value)}/>
         </div>
 
         <div className="form-control">
