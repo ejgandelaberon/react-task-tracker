@@ -10,14 +10,18 @@ const Tasks = ({ tasks, deleteFn, toggleFn }) => {
 
   return (
     <>
-      {tasks.map((task) => (
-        <Task
-          key={task.id}
-          task={task}
-          deleteTask={deleteFn}
-          toggleReminder={toggleFn}
-        />
-      ))}
+      {tasks.length > 0
+        ? tasks.map((task) => (
+          <Task
+            key={task.id}
+            task={task}
+            deleteTask={deleteFn}
+            toggleReminder={toggleFn}
+          />
+        ))
+      
+        : <p style={{display: 'flex', justifyContent: 'center'}}>No tasks found.</p>
+      }
 
       <Button
         color='green'
