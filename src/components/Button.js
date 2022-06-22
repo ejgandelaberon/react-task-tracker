@@ -1,11 +1,9 @@
 import PropTypes from 'prop-types'
 
-const Button = ({ type, color, text, className, redirect }) => {
+const Button = ({ text, className, redirect }) => {
   return (
     <button
-      type={type}
       onClick={redirect}
-      style={{backgroundColor: color}}
       className={className}
     >{text}
     </button>
@@ -13,11 +11,10 @@ const Button = ({ type, color, text, className, redirect }) => {
 }
 
 Button.defaultProps = {
-  color: 'steelblue',
+  text: 'Button',
 }
 
 Button.propTypes = {
-  color: PropTypes.string,
   text: PropTypes.string.isRequired,
   redirect: PropTypes.func.isRequired,
 }

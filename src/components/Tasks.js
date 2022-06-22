@@ -1,12 +1,8 @@
 import Task from './Task';
-import Button from './Button';
-import { useNavigate } from 'react-router-dom';
 
-const Tasks = ({ tasks, deleteFn, toggleFn }) => {
-  const nav = useNavigate()
-  const redirect = () => {
-    nav('/tasks/create')
-  }
+const Tasks = ({ tasks, deleteFn, toggleFn, loading }) => {
+
+  if(loading) return <p style={{display: 'flex', justifyContent: 'center'}}>Loading...</p>
 
   return (
     <>
@@ -23,12 +19,7 @@ const Tasks = ({ tasks, deleteFn, toggleFn }) => {
         : <p style={{display: 'flex', justifyContent: 'center'}}>No tasks found.</p>
       }
 
-      <Button
-        color='green'
-        text='Add Task'
-        className='btn addTask'
-        redirect={redirect}
-      />
+      
     </>
   )
 }

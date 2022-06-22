@@ -54,6 +54,39 @@ body {
   width: 100%;
 }
 
+.btn-fa {
+  display: inline-block;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-save {
+  background-color: #075985;
+}
+
+.btn-save:hover {
+  background-color: #0c4a6e;
+}
+
+.addTask, .btn-fa {
+  background-color: #0d9488;
+}
+
+.addTask:hover, .btn-fa:hover {
+  background-color: #0f766e;
+}
+
+.backToTasks {
+  background-color: #737373;
+}
+
+.backToTasks:hover {
+  background-color: #525252
+}
+
 .addTask, .backToTasks {
   width: 100%;
   text-align: center;
@@ -62,20 +95,29 @@ body {
 }
 
 .task {
-  background: #f4f4f4;
+  background: #e2e8f0;
   border-left: 5px solid gray;
   margin: 5px;
   padding: 10px 20px;
   cursor: pointer;
 }
 
+.task:hover {
+  background: #cbd5e1;
+}
+
 .task.reminder {
-  border-left: 5px solid green;
+  border-left: 5px solid #0d9488;
 }
 
 .task h3 {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.pagination {
+  display: flex;
   justify-content: space-between;
 }
 

@@ -44,11 +44,10 @@ const AddTask = ({ onAdd }) => {
           <input type="checkbox" checked={reminder} value={reminder} onChange={(e) => setReminder(e.currentTarget.checked)}/>
         </div>
 
-        <input className="btn btn-block" type="submit" value="Save Task"/>
+        <input className="btn btn-block btn-save" type="submit" value="Save Task"/>
       </form>
 
       <Button
-        color='gray'
         text='Back to Tasks'
         className='btn backToTasks'
         redirect={redirect}
