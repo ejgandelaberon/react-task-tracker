@@ -11,9 +11,9 @@ const Tasks = ({ tasks, deleteFn, toggleFn }) => {
   return (
     <>
       {tasks.length > 0
-        ? tasks.map((task) => (
+        ? tasks.map((task, index) => (
           <Task
-            key={task.id}
+            key={index}
             task={task}
             deleteTask={deleteFn}
             toggleReminder={toggleFn}
