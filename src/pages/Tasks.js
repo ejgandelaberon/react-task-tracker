@@ -1,8 +1,12 @@
 import Task from './Task';
 
 const Tasks = ({ tasks, deleteFn, toggleFn, loading }) => {
+  const pStyle = {
+    display: 'flex',
+    justifyContent: 'center'
+  }
 
-  if(loading) return <p style={{display: 'flex', justifyContent: 'center'}}>Loading...</p>
+  if(loading) return <p style={pStyle}>Loading...</p>
 
   return (
     <>
@@ -16,7 +20,7 @@ const Tasks = ({ tasks, deleteFn, toggleFn, loading }) => {
           />
         ))
       
-        : <p style={{display: 'flex', justifyContent: 'center'}}>No tasks found.</p>
+        : <p style={pStyle}>No tasks found.</p>
       }
 
       
