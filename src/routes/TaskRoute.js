@@ -4,7 +4,7 @@ import axios from "axios"
 import Tasks from '../pages/Tasks'
 import Pagination from "../components/Pagination"
 import Button from "../components/Button"
-import AddTask from "../components/AddTask"
+import AddTask from "../pages/AddTask"
 
 const TaskRoute = () => {
   const path = 'http://task-api.test/api/tasks'
