@@ -1,12 +1,19 @@
-import { FaTimes } from 'react-icons/fa'
+import { FaTimes, FaPen, FaPenAlt, FaPencilAlt } from 'react-icons/fa'
 
 const Task = ({ task, deleteTask, toggleReminder }) => {
   return (
     <div className={`task ${task.reminder ? 'reminder' : ''}`} onDoubleClick={() => toggleReminder(task.id)}>
-      <h3>
-        {task.name} <FaTimes onClick={() => deleteTask(task)} style={{ color: '#134e4a' }}/>
-      </h3>
-      <p>{task.day}</p>
+      <div>
+        <h3 className='taskName'>
+          {task.name}
+        </h3>
+        <p>{task.day}</p>
+      </div>
+      <div className='actions-container'>
+        <button><FaPen style={{ color: '#fff' }}/></button>
+        <span className="spacer"></span>
+        <button onClick={() => deleteTask(task)}><FaTimes style={{ color: '#fff' }}/></button>
+      </div>
     </div>
   )
 }

@@ -4,6 +4,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  --hover-transition: 0.3s;
 }
 
 body {
@@ -54,33 +55,27 @@ body {
   width: 100%;
 }
 
-.btn-fa {
-  display: inline-block;
-  color: #fff;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 .btn-save {
   background-color: #075985;
+  transition: var(--hover-transition);
 }
 
 .btn-save:hover {
   background-color: #0c4a6e;
 }
 
-.addTask, .btn-fa {
+.addTask, .pagination button {
   background-color: #0d9488;
+  transition: var(--hover-transition);
 }
 
-.addTask:hover, .btn-fa:hover {
+.addTask:hover, .pagination button:hover {
   background-color: #0f766e;
 }
 
 .backToTasks {
   background-color: #737373;
+  transition: var(--hover-transition);
 }
 
 .backToTasks:hover {
@@ -95,19 +90,22 @@ body {
 }
 
 .task {
+  display: flex;
+  justify-content: space-between;
   background: #e2e8f0;
   border-left: 5px solid gray;
   margin: 5px;
   padding: 10px 20px;
-  cursor: pointer;
+  transition: var(--hover-transition);
 }
 
 .task:hover {
   background: #cbd5e1;
+  border-width: 10px;
 }
 
 .task.reminder {
-  border-left: 5px solid #0d9488;
+  border-color: #0d9488;
 }
 
 .task h3 {
@@ -116,9 +114,60 @@ body {
   justify-content: space-between;
 }
 
+.taskName {
+  max-width: 300px;
+  white-space: nowrap;
+  overflow-x: scroll;
+  -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
+  scrollbar-width: none;  /* Hide scrollbar for Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.taskName::-webkit-scrollbar {
+  display: none;
+}
+
+.actions-container {
+  min-width: 60px;
+  
+}
+
+.actions-container button {
+  border: none;
+  border-radius: 50%;
+  background-color: #0d9488;
+  padding: 0.3rem;
+  cursor: pointer;
+  transition: var(--hover-transition);
+}
+
+.actions-container button:hover {
+  background-color: #0f766e;
+  padding: 0.6rem;
+}
+
+/* .action {
+  padding: 0.5rem;
+  cursor: pointer;
+} */
+
 .pagination {
   display: flex;
   justify-content: space-between;
+}
+
+.pagination button {
+  display: inline-block;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.spacer {
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 /* .add-form {
@@ -152,8 +201,8 @@ body {
 }
 
 .form-control-check input {
-  flex: 2;
-  height: 20px;
+  flex: 3;
+  max-height: 20px;
 }
 
 footer {

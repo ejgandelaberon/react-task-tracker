@@ -64,16 +64,17 @@ const TaskRoute = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(task)
     })
-    const data = await res.json()
-    setTasks([...tasks, data])
+    // const data = await res.json()
+    // setTasks([...tasks, data])
   }
 
   // delete task
   const deleteTask = async (objTask) => {
-    await fetch(`${path}/delete/${objTask.id}`, { method: 'DELETE' })
-    const filtered = tasks.filter(task => task.id !== objTask.id)
-    setTasks(filtered)
-    console.log(`Deleted task: ${objTask.name}`);
+    alert('deleting task')
+    // await fetch(`${path}/delete/${objTask.id}`, { method: 'DELETE' })
+    // const filtered = tasks.filter(task => task.id !== objTask.id)
+    // setTasks(filtered)
+    // console.log(`Deleted task: ${objTask.name}`);
   }
 
   //toggle reminder

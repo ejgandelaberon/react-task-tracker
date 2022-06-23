@@ -6,8 +6,8 @@ const Pagination = ({ gotoPrevApiUrl,gotoNextApiUrl }) => {
 
   return (
     <div className="pagination">
-        <button className='btn-fa' disabled={disabledPrev} onClick={gotoPrevApiUrl}><FaAngleDoubleLeft/></button>
-        <button className='btn-fa' disabled={disabledNext} onClick={gotoNextApiUrl}><FaAngleDoubleRight/></button>
+        <button disabled={disabledPrev} onClick={gotoPrevApiUrl}><FaAngleDoubleLeft/></button>
+        <button disabled={disabledNext} onClick={gotoNextApiUrl}><FaAngleDoubleRight/></button>
     </div>
   )
 }
